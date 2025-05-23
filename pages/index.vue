@@ -39,6 +39,12 @@ import { object, string, type InferType } from 'yup'
 import type { FormSubmitEvent } from '@nuxt/ui'
 import { authStore } from '~/stores/auth'
 
+useHead({
+  title: 'Login',
+  meta : [
+    {name: 'description', content: 'This is Login Page'}
+  ]
+})
 definePageMeta({
   layout: false
 })

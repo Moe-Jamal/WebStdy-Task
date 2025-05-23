@@ -67,7 +67,12 @@
 </template>
 
 <script setup>
-
+  useHead({
+    title: 'Home',
+    meta : [
+      {name: 'description', content: 'This is WebStdy Home Page'}
+    ]
+  })
 </script>
 
 <style  scoped>

@@ -10,6 +10,12 @@ import axios from 'axios';
 import type { SimplifiedUser } from '~/types/simpleUserData';
 import type { User } from '~/types/user';
 
+    useHead({
+    title: 'Categories',
+    meta : [
+        {name: 'description', content: 'This is Categories Page'}
+    ]
+    })
 const userData = ref<User[]>([])
 const simpleUserData = ref<SimplifiedUser[]>([])
 const isloading = ref<boolean>(false)

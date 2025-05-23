@@ -8,6 +8,13 @@
 <script setup lang="ts" >
 import ProductCard from '~/components/ProductCard.vue'
 import type { Product } from '~/types/product'
+
+    useHead({
+    title: 'Products',
+    meta : [
+        {name: 'description', content: 'This is Products Page'}
+    ]
+    })
 const { $axios } = useNuxtApp()
 const products = ref<Product[]>([])
 const isloading = ref<boolean>(false)

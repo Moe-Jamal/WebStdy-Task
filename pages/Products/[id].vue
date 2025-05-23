@@ -17,7 +17,7 @@ import type {Product} from '~/types/product'
     const { $axios } = useNuxtApp()
     const {id} = useRoute<string>().params
     const isloading = ref<boolean>(false)
-    const { data: product, error } = await useAsyncData<Product>(`product-${id}`, async () => {
+    const { data: product } = await useAsyncData<Product>(`product-${id}`, async () => {
     try {
         isloading.value = true
         const res = await $axios.get(`/api/v1/products/${id}`)
@@ -37,6 +37,13 @@ import type {Product} from '~/types/product'
     const res = await $axios.get(`/api/v1/products/${id}/related`)
     return res.data.slice(0, 5)
     })
+
+    useHead({
+  title: `${product.value?.title}`,
+  meta : [
+    {name: 'description', content: `This is Product Details Page, ${product.value?.description}`}
+  ]
+})
 </script>
 
 <style  scoped>

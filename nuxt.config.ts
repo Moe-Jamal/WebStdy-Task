@@ -11,4 +11,9 @@ export default defineNuxtConfig({
     duration: 1000,
     once: true,
   },
+  app: {
+    head: {
+      meta: [{ name: "author", content: "Mohamed Jamal" }],
+    },
+  },
 });
